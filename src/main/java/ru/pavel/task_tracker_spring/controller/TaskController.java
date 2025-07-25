@@ -20,17 +20,17 @@ public class TaskController {
         return taskService.getAllTasks();
     }
 
-    @PostMapping("/add")
+    @PostMapping
     public TaskDTO addTask(@RequestBody TaskDTO taskDTO) throws DeadlineException {
         return taskService.add(taskDTO);
     }
 
-    @PatchMapping("/edit")
+    @PutMapping
     public TaskDTO editTask(@RequestParam("id") long taskId, @RequestBody TaskDTO taskDTO) throws DeadlineException {
         return taskService.edit(taskId, taskDTO);
     }
 
-    @DeleteMapping("/delete")
+    @DeleteMapping
     public void deleteTask(@RequestParam("id") long taskId) {
         taskService.deleteTask(taskId);
     }
